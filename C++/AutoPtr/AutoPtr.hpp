@@ -19,7 +19,3 @@ private:
     T* _ptr;
 };
 
-int main() 
-{
-    return 0   
-}
