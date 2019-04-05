@@ -1,10 +1,12 @@
-#include <iostream>
-using namespace std;
-
-
-
-int main()
-{
-	test();
-	return 0;
-}
+//#include <iostream>
+//using namespace std;
+//
+//#include "Singleton.hpp"
+//
+//
+//
+//int main()
+//{
+//	test();
+//	return 0;
+//}
