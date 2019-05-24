@@ -3,10 +3,11 @@
 "配色
 "colorscheme torte
 "colorscheme murphy
-"colorscheme desert
-"colorscheme desert
+"colorscheme desert 
+"colorscheme desert 
 "colorscheme elflord
-"colorscheme ron
+colorscheme ron
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 通用设置
@@ -35,7 +36,7 @@ set cmdheight=2          " 命令行（在状态行下）的高度，设置为2
 set showcmd         	 " 输入的命令显示出来，看的清楚些  
 set ruler                " 总是显示光标位置
 set laststatus=2         " 启动显示状态行(1),总是显示状态行(2)  
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
 set number               " 开启行号显示
 set cursorline           " 突出显示当前行
 highlight CursorLine   cterm=NONE ctermbg=black ctermfg=white guibg=NONE guifg=NONE
@@ -119,8 +120,8 @@ endfunc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gvim/macvim设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 if has("gui_running")
-    set guifont=Droid_Sans_Mono_Nerd_Font_Complete:h18 " 设置字体
     set guioptions-=m           " 隐藏菜单栏
     set guioptions-=T           " 隐藏工具栏
     set guioptions-=L           " 隐藏左侧滚动条
@@ -134,8 +135,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "键盘命令
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"nmap <leader>f :find<cr>
+let mapleader = ","      " 定义<leader>键   
 
 " 映射全选+复制 ctrl+a
 map <C-A> ggVGY
@@ -144,13 +144,12 @@ map <F12> gg=G
 
 vmap <C-c> "+y		" 选中状态下 Ctrl+c 复制
 
-nnoremap <F2> :g/^\s*$/d<CR> 	"去空行
+nnoremap <F2> :g/^\s*$/d<CR> 	"去空行  
 
-" 分屏窗口移动
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+
+" 编辑vimrc文件
+nnoremap <leader>e :edit $MYVIMRC<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码缩进和排版
@@ -191,7 +190,7 @@ function! ClosePair(char)
 		return a:char
 	endif
 endfunction
-filetype plugin indent on
+filetype plugin indent on 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 搜索设置
@@ -208,7 +207,7 @@ set noswapfile          " 禁止生成临时文件
 set autoread            " 文件在vim之外修改过，自动重新读入
 set autowrite           " 设置自动保存
 set confirm             " 在处理未保存或只读文件的时候，弹出确认
-set clipboard+=unnamed 	" 共享剪贴板
+set clipboard+=unnamed 	" 共享剪贴板  
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 编码设置
@@ -219,4 +218,13 @@ set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 分屏窗口移动                                                                                                                                                      
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
