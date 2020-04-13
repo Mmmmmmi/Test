@@ -7,7 +7,6 @@ class Singleton1
 public:
 	static Singleton1* getSingleton1()
 	{
-		_singleton = new Singleton1();
 		return _singleton;
 	}
 
@@ -33,12 +32,11 @@ private:
 
 	Singleton1(const Singleton1&);
 	Singleton1& operator=(const Singleton1&);
-
 	static Singleton1* _singleton;
 };
 
 
-Singleton1* Singleton1::_singleton;
+Singleton1* Singleton1::_singleton = new Singleton1();
 Singleton1::Free Singleton1::free;
 
 #include <mutex>
